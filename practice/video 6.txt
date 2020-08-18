@@ -1,0 +1,39 @@
+create a new app calls users
+add the app to the project
+open views.py 
+create register view that render register.html file which extends from base tempalte in blog app
+create an instance from UserCreationForm
+code the register.html file with specific styling
+make the form method to "POST" 
+when we make a new user to submit and press sign up it reload the register view again 
+and if we check the admin page we're not gonna see new users 
+and that's because we're posting data from the form and didn't specify where this data should go
+so it reloads the register view because it doesn't know what to do
+so then we should create form instance with the data posted to the form from the user
+by checking if request.method == "POST"
+check register function now and come back
+. 
+.
+.
+ok so now we're gonna edit base template to edit messages to display in all templates inherites from the base template
+{% if messages %}
+        {% for message in messages%}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+{% endif %}
+
+so at this point let's 
+1) set it up so actually saving the user when the form validates
+#if form.is_valid():
+#form.save()
+2) let's add an additional field so the user enter his email also
+	#to add an additional field to the django user form we have to add the field to the form itself
+	#so to do this we need to create a new form that inherits from our user creation form 
+	#so to do this we want to create a new file where we can put those new forms 
+	#forms.py
+	#
+3) get our form a little bit nicer 
+#crispy_forms
+4) display a validation feedbackto our end user in a better format
