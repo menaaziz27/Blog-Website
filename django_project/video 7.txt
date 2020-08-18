@@ -1,0 +1,21 @@
+we have just created in last video how to sign up a new user account 
+but they are not allowing to log in using their account yet
+so the admin page in django is for only users with admin access
+but by default the new users don't have this access so we need to create a log in page for them in the front-end
+
+1) open views.py in your project folder 
+2) from django.contrib.auth import views as auth_views
+3) add login and logout views that will display when you visit login and logut routes
+4) change the default path of them both by adding template_name attribute
+5) add login and logout pages in the users app templates
+6) copy the register code to both of them and edit each file
+7) let's foucs with login now :
+   edit the text in login files 
+
+8) if we now go to login/ route it will direct us to the login template which we're created using the django login form
+9) let's focus with logout template
+   if we didn't specify template_name in logout view and go to logout/ route it'll direct us to logout admin page
+   but it's not what we want to have however we want to create our own logout page so we will specify template_name to 
+   logout.html file and edit that file
+
+10) let's change our navigation bar so it changes whehnever the user is logged in or logged out 
