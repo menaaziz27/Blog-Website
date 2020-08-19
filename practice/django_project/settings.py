@@ -122,3 +122,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = "blog-home" 
+#3shan lma ados 3la zorar login f el form ywddene b3daha 3l home
+
+LOGIN_URL = "login" 
+#da 3shan law 7awelna n-access profile page w e7na 3amlen logged out 
+#el mfrod ywddene lel login page el awl (3shan el login decorator)
+#f lma byegy ywdene l login page hwa by default byro7 l route esmo /accounts/login
+#f e7na bnghyr el default route da w bn2olo yro7 l login template bta3tna 
