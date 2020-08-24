@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 from django.urls import reverse_lazy
+from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (ListView, 
     DetailView, 
@@ -22,6 +23,7 @@ class PostListView(ListView):
     template_name = "blog/home.html" #<app>/<model>_<viewtype>.html
     context_object_name = "posts"
     ordering = ["-date_posted"]
+    paginate_by = 2
 
 class PostDetailView(DetailView):
     model = Post 
